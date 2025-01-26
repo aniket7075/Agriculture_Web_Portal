@@ -13,7 +13,7 @@ public class Cart {
     private Integer id;
 
     @ManyToOne
-    private user user;
+    private User User;
 
     @ManyToOne
     private Product product;
@@ -28,12 +28,12 @@ public class Cart {
 		this.id = id;
 	}
 
-	public user getUser() {
-		return user;
+	public User getUser() {
+		return User;
 	}
 
-	public void setUser(user user) {
-		this.user = user;
+	public void setUser(User User) {
+		this.User = User;
 	}
 
 	public Product getProduct() {
