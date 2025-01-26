@@ -8,6 +8,7 @@ public class AgricultureApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AgricultureApplication.class, args);
+		System.out.println("Currently Running Agriculture Web Portal ");
 	}
 
 }
