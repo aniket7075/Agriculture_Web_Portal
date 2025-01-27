@@ -10,6 +10,9 @@
     <p>This is the User Dashboard.</p>
     <a href="/logout">Logout</a>
 <script src="/static/js/scripts.js"></script>
+ <form action="/login.jsp" method="post">
+    <p><button type="submit">Register</button>Already have an account? Login here.</p>
+    </form>
 </body>
 
 </html>
