@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.agri.agriculture.model.User;
 import com.agri.agriculture.repo.userinfo;
 
+import ch.qos.logback.core.joran.spi.HttpUtil.RequestMethod;
+
 
 @Controller
 public class UserController {
@@ -19,29 +21,27 @@ public class UserController {
     @Autowired
     private userinfo userRepository;
 
-    // Login Page
     @RequestMapping("/")
     public String home() {
         return "register.jsp";
     }
-    @GetMapping("/login")
+    // Login Page
+  
+    @RequestMapping("/login")
     public String login() {
-        return "login";
+        return "login.jsp";
     }
 
-    // Registration Page
-    @GetMapping("/register")
-    public String register() {
-        return "register";
-    }
+   
 
-    @PostMapping("/register")
+    @RequestMapping("/register")
     public String registerUser(User user, Model model) {
         Optional<User> existingUser = userRepository.findByUsername(user.getUsername());
         if (existingUser.isPresent()) {
             model.addAttribute("error", "Username already exists.");
-            return "register";
+            return "redirect:/register";
         }
+
         userRepository.save(user);
         model.addAttribute("message", "Registration successful. Please log in.");
         return "redirect:/login";
@@ -51,6 +51,6 @@ public class UserController {
     @GetMapping("/dashboard")
     public String dashboard(Model model) {
         // Add User role logic here
-        return "userDashboard"; // Change based on role
+        return "userDashboard.jsp"; // Change based on role
     }
 }

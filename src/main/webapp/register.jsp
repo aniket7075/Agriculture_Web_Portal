@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>Ragister</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/static/styles.css">
 </head>
 
 <body>
@@ -22,7 +22,8 @@
         </select><br>
         <button type="submit">Register</button>
     </form>
-    <p><a href="/login">Already have an account? Login here.</a></p>
+    <form action="/login.jsp" method="post">
+    <p><button type="submit">Register</button>Already have an account? Login here.</p>
 <script src="/static/js/scripts.js"></script>
 </body>
 
