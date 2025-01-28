@@ -1,31 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ragister</title>
-    <link rel="stylesheet" type="text/css" href="/static/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
-    <h1>Register</h1>
-    <form action="/register" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <label for="role">Role:</label>
-        <select id="role" name="role" required>
-            <option value="USER">User</option>
-            <option value="FARMER">Farmer</option>
-            <option value="ADMIN">Admin</option>
-        </select><br>
-        <button type="submit">Register</button>
-    </form>
-    <form action="/login.jsp" method="post">
-    <p><button type="submit">Register</button>Already have an account? Login here.</p>
-    </form>
-<script src="/static/js/scripts.js"></script>
+    <div class="container mt-5">
+        <h2 class="text-center">Registration</h2>
+        <form action="/register" method="post" class="mt-4">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="mb-3">
+                <label for="role" class="form-label">Role</label>
+                <select class="form-select" id="role" name="role" required>
+                    <option value="Farmer">Farmer</option>
+                    <option value="Customer">Customer</option>
+                    <option value="Admin">Admin</option>
+                    </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+        <p class="text-center mt-3">Already have an account? <a href="login.jsp">Login</a></p>
+    </div>
 </body>
-
 </html>
