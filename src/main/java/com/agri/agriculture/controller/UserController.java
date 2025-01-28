@@ -41,13 +41,13 @@ public class UserController {
         // Mock validation (replace with DB validation)
         if ("admin".equals(username) && "admin123".equals(password)) {
             model.addAttribute("message", "Welcome, Admin!");
-            return "redirect:/admin/home";
+            return "adminDashboard.jsp";
         } else if ("farmer".equals(username) && "farmer123".equals(password)) {
             model.addAttribute("message", "Welcome, Farmer!");
-            return "redirect:/farmer/home";
+            return "redirect:/farmerDashboard.jsp";
         } else if ("customer".equals(username) && "customer123".equals(password)) {
             model.addAttribute("message", "Welcome, Customer!");
-            return "redirect:/customer/home";
+            return "userDashboard.jsp";
         } else {
             model.addAttribute("error", "Invalid username or password!");
             return "login";
