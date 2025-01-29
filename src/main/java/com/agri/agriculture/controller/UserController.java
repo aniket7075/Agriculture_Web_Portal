@@ -25,7 +25,7 @@ public class UserController {
 
     @RequestMapping("/")
     public String home() {
-        return "register.jsp";
+        return "Home.jsp";
     }
     // Login Page
   
