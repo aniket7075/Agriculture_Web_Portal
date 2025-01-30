@@ -6,7 +6,7 @@
     <title>Error</title>
 </head>
 <body>
-    <h1>Oops! Something went wrong.</h1>
+    <h1>Oops! Something went wrong. Try Again, Plz Relode Page </h1>
     <p>${errorMessage}</p>
     <a href="/">Back to Home</a>
 <script src="/static/js/scripts.js"></script>
