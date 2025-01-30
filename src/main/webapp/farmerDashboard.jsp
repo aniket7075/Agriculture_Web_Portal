@@ -8,7 +8,6 @@
 <body>
     <h1>Welcome, Farmer</h1>
     <p>This is the Farmer Dashboard.</p>
-    
     <a href="/logout">Logout</a>
 <script src="/static/js/scripts.js"></script>
 </body>
