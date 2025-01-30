@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>Welcome, User</h1>
-    <p>This is the User Dashboard.</p>
+    <p>This is the User Dashboard. </p>
+    <a href="/Home.jsp">Home</a>
     <a href="/logout">Logout</a>
 <script src="/static/js/scripts.js"></script>
  <form action="/login.jsp" method="post">
