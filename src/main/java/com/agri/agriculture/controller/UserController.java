@@ -38,7 +38,8 @@ public class UserController {
     public String handleLogin(@RequestParam String username,
                               @RequestParam String password,
                               @RequestParam String role,
-                              Model model) {
+                              Model model) 
+    {
         // Fetch the user from the database
         User user = userRepo.findByUsernameAndPassword(username, password);
         
