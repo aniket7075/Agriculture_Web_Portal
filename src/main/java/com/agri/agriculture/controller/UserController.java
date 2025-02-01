@@ -18,19 +18,22 @@ import com.agri.agriculture.repo.userinfo;
 
 
 @Controller
-public class UserController {
+public class UserController
+{
 
     @Autowired
     private userinfo userRepo;
 
     @RequestMapping("/")
-    public String home() {
+    public String home() 
+    {
         return "Home.jsp";
     }
     // Login Page
   
     @RequestMapping("/registration")
-    public String showRegistrationPage() {
+    public String showRegistrationPage() 
+    {
         return "registration"; // Returns registration.jsp
     }
 
@@ -43,9 +46,11 @@ public class UserController {
         // Fetch the user from the database
         User user = userRepo.findByUsernameAndPassword(username, password);
         
-        if (user != null && user.getRole().equalsIgnoreCase(role)) {
+        if (user != null && user.getRole().equalsIgnoreCase(role)) 
+        {
             // Redirect to the appropriate dashboard based on role
-            switch (role.toLowerCase()) {
+            switch (role.toLowerCase()) 
+            {
                 case "admin":
                     return "redirect:/adminDashboard.jsp";
                 case "farmer":
@@ -56,7 +61,9 @@ public class UserController {
                     model.addAttribute("error", "Invalid role!");
                     return "login";
             }
-        } else {
+        }
+        else 
+        {
             model.addAttribute("error", "Invalid username, password, or role!");
             return "login";
         }
