@@ -1,32 +1,39 @@
 package com.agri.agriculture.model;
 
-public class CartItem {
+public class CartItem 
+{
     private Product product;
     private int quantity;
     
     
-    public CartItem(Product product, int quantity) {
+    public CartItem(Product product, int quantity) 
+    {
         this.product = product;
         this.quantity = quantity;
     }
 
-    public Product getProduct() {
+    public Product getProduct() 
+    {
         return product;
     }
 
-    public void setProduct(Product product) {
+    public void setProduct(Product product) 
+    {
         this.product = product;
     }
 
-    public int getQuantity() {
+    public int getQuantity() 
+    {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(int quantity) 
+    {
         this.quantity = quantity;
     }
 
-    public double getTotalPrice() {
+    public double getTotalPrice()
+    {
         return product.getPrice() * quantity;
     }
 }
