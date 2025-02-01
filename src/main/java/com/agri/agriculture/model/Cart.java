@@ -20,23 +20,28 @@ public class Cart {
 
     private int quantity;
 
-	public Integer getId() {
+	public Integer getId()
+	{
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Integer id) 
+	{
 		this.id = id;
 	}
 
-	public User getUser() {
+	public User getUser() 
+	{
 		return User;
 	}
 
-	public void setUser(User User) {
+	public void setUser(User User) 
+	{
 		this.User = User;
 	}
 
-	public Product getProduct() {
+	public Product getProduct() 
+	{
 		return product;
 	}
 
