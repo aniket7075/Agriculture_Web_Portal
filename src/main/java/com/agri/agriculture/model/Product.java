@@ -19,54 +19,66 @@ public class Product
     private Integer quantity;
     private String image; // Add a photo attribute
     // Getters and Setters
-    public Integer getId() {
+    public Integer getId() 
+    {
         return id;
     }
 
    
-	public String getImage() {
+	public String getImage()
+	{
 		return image;
 	}
 
 
-	public void setImage(String image) {
+	public void setImage(String image) 
+	{
 		this.image = image;
 	}
 
 
-	public void setId(Integer id) {
+	public void setId(Integer id) 
+	{
         this.id = id;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 
-    public Double getPrice() {
+    public Double getPrice()
+    {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(Double price)
+    {
         this.price = price;
     }
 
-    public String getDescription() {
+    public String getDescription() 
+    {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(String description) 
+    {
         this.description = description;
     }
 
-    public Integer getQuantity() {
+    public Integer getQuantity() 
+    {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(Integer quantity) 
+    {
         this.quantity = quantity;
     }
 
