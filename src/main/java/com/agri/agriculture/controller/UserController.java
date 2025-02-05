@@ -42,7 +42,8 @@ import com.agri.agriculture.repo.userinfo;
 
             User userFromDb = userRepo.findByEmail(email);
             if (userFromDb != null) {
-                if (userFromDb.getPassword().equals(password)) {
+                if (userFromDb.getPassword().equals(password)) getemail().equals(email))
+{
                     session.setAttribute("currentUser", userFromDb);
 
                     if ("Farmer".equals(userFromDb.getRole())) {
@@ -63,7 +64,12 @@ import com.agri.agriculture.repo.userinfo;
 
             return "login.jsp";
         }
-        // Registration
+        private Object getemail() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		// Registration
         @RequestMapping("/register")
         public String handleRegistration(@ModelAttribute User user) {
             // Save the new user in the database
