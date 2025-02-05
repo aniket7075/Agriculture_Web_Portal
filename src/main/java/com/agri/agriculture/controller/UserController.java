@@ -36,7 +36,6 @@ public class UserController
     {
         return "registration"; // Returns registration.jsp
     }
-
     @PostMapping("/login")
     public String handleLogin(@RequestParam String username,
                               @RequestParam String password,
@@ -45,7 +44,6 @@ public class UserController
     {
         // Fetch the user from the database
         User user = userRepo.findByUsernameAndPassword(username, password);
-        
         if (user != null && user.getRole().equalsIgnoreCase(role)) 
         {
             // Redirect to the appropriate dashboard based on role
@@ -68,7 +66,6 @@ public class UserController
             return "login";
         }
     }
-
 	@RequestMapping("/register")
     public String handleRegistration(@ModelAttribute User e) 
     {
