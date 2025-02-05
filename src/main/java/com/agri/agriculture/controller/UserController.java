@@ -17,7 +17,8 @@ import com.agri.agriculture.model.User;
 import com.agri.agriculture.repo.userinfo;   
   
     @Controller
-    public class UserController {
+    public class UserController 
+    {
 
         @Autowired
         private userinfo userRepo;
@@ -82,5 +83,3 @@ import com.agri.agriculture.repo.userinfo;
             return "userDashboard.jsp"; // User dashboard page
         }
     }
-
-
