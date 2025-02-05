@@ -25,15 +25,16 @@
         <div class="login-form">
             <h2 class="text-center">Login</h2>
             <form action="/login" method="post">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" required>
-                </div>
+                
+                   <div class="mb-3">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" required>
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                     <label for="role" class="form-label">Role</label>
                     <select class="form-select" id="role" name="role" required>
                         <option value="">Select Role</option>
@@ -41,10 +42,10 @@
                         <option value="Farmer">Farmer</option>
                         <option value="Customer">Customer</option>
                     </select>
-                </div>
+                </div> -->
                 <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
-            <p class="text-center mt-3">Don't have an account? <a href="registration.jsp">Register</a></p>
+            <p class="text-center mt-3">Don't have an account? <a href="/registration">Register</a></p>
         </div>
     </div>
 </body>

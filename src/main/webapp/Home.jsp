@@ -1,4 +1,4 @@
-<%@ include file="heder.jsp" %>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,9 +79,9 @@
     <div class="welcome-container">
         <h1>Welcome to Our Platform</h1>
         <div class="btn-container">
-            <a href="/farmer-login" class="btn btn-primary btn-custom">Farmer Login</a>
-            <a href="/admin-login" class="btn btn-success btn-custom">Admin Login</a>
-            <a href="/customer-login" class="btn btn-warning btn-custom">Customer Login</a>
+            <a href="/login.jsp" class="btn btn-primary btn-custom">Farmer Login</a>
+            <a href="/register.jsp" class="btn btn-success btn-custom">Register Here</a>
+            <a href="/login.jsp" class="btn btn-warning btn-custom">Customer Login</a>
         </div>
     </div>
 
