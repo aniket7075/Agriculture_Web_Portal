@@ -3,20 +3,19 @@ package com.agri.agriculture.controller;
 
 
 
-    import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
-    import org.springframework.beans.factory.annotation.Autowired;
-    import org.springframework.stereotype.Controller;
-    import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-    import org.springframework.web.bind.annotation.ModelAttribute;
-    import org.springframework.web.bind.annotation.PostMapping;
-    import org.springframework.web.bind.annotation.RequestMapping;
-    import org.springframework.web.bind.annotation.RequestParam;
-
-    import com.agri.agriculture.model.User;
-    import com.agri.agriculture.repo.userinfo;
-
+import com.agri.agriculture.model.User;
+import com.agri.agriculture.repo.userinfo;   
+  
     @Controller
     public class UserController {
 
@@ -38,24 +37,19 @@ package com.agri.agriculture.controller;
         public String login(@RequestParam String email, 
                             @RequestParam String password,
                             Model model, 
-                            HttpSession session) {
-            
-            // Get the user from the database using the provided email
-            User userFromDb = userRepo.findByEmail(email);
+                            HttpSession session) { // Ensure this is treated correctly
 
-            // Check if the user exists
+            User userFromDb = userRepo.findByEmail(email);
             if (userFromDb != null) {
-                // Check if the password matches
                 if (userFromDb.getPassword().equals(password)) {
                     session.setAttribute("currentUser", userFromDb);
 
-                    // Redirect to the appropriate dashboard based on user role
                     if ("Farmer".equals(userFromDb.getRole())) {
                         session.setAttribute("role", "Farmer");
-                        return "redirect:/farmerDashboard"; // Redirect to the farmer dashboard
+                        return "redirect:/farmerDashboard";
                     } else if ("Customer".equals(userFromDb.getRole())) {
                         session.setAttribute("role", "Customer");
-                        return "redirect:/userDashboard"; // Redirect to the user dashboard
+                        return "redirect:/userDashboard";
                     } else {
                         model.addAttribute("error", "Invalid user role.");
                     }
@@ -66,15 +60,14 @@ package com.agri.agriculture.controller;
                 model.addAttribute("error", "User not found.");
             }
 
-            return "login.jsp"; // Return login page if there's an error
+            return "login.jsp";
         }
-
         // Registration
         @RequestMapping("/register")
         public String handleRegistration(@ModelAttribute User user) {
             // Save the new user in the database
             userRepo.save(user);
-            return "redirect:/login"; // Redirect to the login page after registration
+            return "login.jsp"; // Redirect to the login page after registration
         }
 
         // Farmer Dashboard Page
